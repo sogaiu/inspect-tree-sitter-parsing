@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/sogaiu/tree-sitter-janet-simple
+	branch = master
+	commit = 7e28cbf1ca061887ea43591a2898001f4245fddf
+	parent = 0603c08a46d1f8c8138e85c85a27f956fda43484
+	method = merge
+	cmdver = 0.4.9
