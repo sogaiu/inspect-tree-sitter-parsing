@@ -5,10 +5,25 @@
 
 TSLanguage *tree_sitter_janet_simple();
 
+void log_by_printf(void *payload, TSLogType type, const char *message) {
+  (void)payload;
+  if (type == TSLogTypeLex) {
+    printf("  %s\n", message);
+  } else {
+    printf("%s\n", message);
+  }
+}
+
 int main() {
 
   TSParser *parser = ts_parser_new();
   ts_parser_set_language(parser, tree_sitter_janet_simple());
+
+  // XXX: uncomment following if `tree-sitter parse -d` output desired
+  /*
+  TSLogger logger = {parser, log_by_printf};
+  ts_parser_set_logger(parser, logger);
+  */
 
   char *source = "``long string``";
 
@@ -21,3 +36,4 @@ int main() {
 
   return 0;
 }
+
